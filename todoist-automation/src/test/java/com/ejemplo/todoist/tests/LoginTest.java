@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
-
+import org.testng.Assert;
 import java.time.Duration;
 
 public class LoginTest implements WebDriverProvider {
@@ -34,16 +34,30 @@ public class LoginTest implements WebDriverProvider {
         ScreenshotUtil.tomarCaptura(driver, "02_click_iniciar_sesion");
 
         WebElement emailField = driver.findElement(By.xpath("//input[@id='element-0']"));
-        emailField.sendKeys("correo@ejemplo.com");
+        emailField.sendKeys("gotih58545@firain.com");
         ScreenshotUtil.tomarCaptura(driver, "03_ingresa_email");
 
         WebElement passwordField = driver.findElement(By.xpath("//input[@id='element-2']"));
-        passwordField.sendKeys("contraseña123");
+        passwordField.sendKeys("facil1234");
         ScreenshotUtil.tomarCaptura(driver, "04_ingresa_password");
 
         WebElement submitBtn = driver.findElement(By.xpath("//button[@type='submit']"));
         submitBtn.click();
         ScreenshotUtil.tomarCaptura(driver, "05_click_login");
+        
+     // ✅ Verificación de URL final
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        String expectedUrl = "https://app.todoist.com/app/today";
+        String actualUrl = driver.getCurrentUrl();
+        ScreenshotUtil.tomarCaptura(driver, "06_verifica_url");
+
+        Assert.assertTrue(actualUrl.startsWith(expectedUrl), "❌ No se redirigió a la página esperada después del login.");
+
+
     }
 
     @AfterClass
