@@ -9,4 +9,10 @@
       <class name="com.ejemplo.todoist.tests.LoginTest"/>
     </classes>
   </test>
+  
+  <test name="Login Fail">
+    <classes>
+        <class name="com.ejemplo.todoist.tests.LoginFail"/>
+    </classes>
+</test>
 </suite>
