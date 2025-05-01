@@ -1,3 +1,4 @@
+
 # 🛠️ Preparando tu entorno para correr las pruebas Todoist 🧪
 
 ## ✅ ¿Qué necesitas tener en tu laptop?
@@ -30,73 +31,74 @@ Abre **CMD** y escribe:
 
 ```bash
 java -version
+```
 
-Si ves java version "21", ¡vas por buen camino! 💪
-📦 Clona y abre el proyecto en Eclipse
+Si ves `java version "21"`, ¡vas por buen camino! 💪
 
-    Clona el repositorio:
+---
 
+## 📦 Clona y abre el proyecto en Eclipse
+
+1. Clona el repositorio:
+
+```bash
 git clone https://github.com/BaronMasiosare/todoisttest.git
+```
 
-    En Eclipse:
-    File > Open Projects from File System
-    → Selecciona la carpeta del proyecto clonado.
+2. En Eclipse:  
+   `File > Open Projects from File System`  
+   → Selecciona la carpeta del proyecto clonado.
 
-    Haz clic derecho en el proyecto todoist-automation
-    → Maven > Update Project...
-    → Marca el proyecto y presiona OK
+3. Haz clic derecho en el proyecto `todoist-automation`  
+   → `Maven > Update Project...`  
+   → Marca el proyecto y presiona **OK**
 
-🧪 Instala TestNG en Eclipse
-🔸 Opción A: Desde Eclipse Marketplace
+---
 
-    Ve a: Help > Eclipse Marketplace
+## 🧪 Instala TestNG en Eclipse
 
-    Busca: TestNG
+### 🔸 Opción A: Desde Eclipse Marketplace
 
-    Haz clic en Install
+1. Ve a: `Help > Eclipse Marketplace`
+2. Busca: **TestNG**
+3. Haz clic en **Install**
 
-🔸 Opción B: Manualmente (si falla Marketplace)
+### 🔸 Opción B: Manualmente (si falla Marketplace)
 
-    Help > Install New Software...
+1. `Help > Install New Software...`
+2. En **Work with:** pega:  
+   👉 `https://testng.org/testng-eclipse-update-site`
+3. Espera que cargue, marca ✅ **TestNG**
+4. Luego:  
+   `Next > Next > Accept License > Finish`
+5. Reinicia Eclipse cuando se te indique
 
-    En Work with: pega:
-    👉 https://testng.org/testng-eclipse-update-site
+---
 
-    Espera que cargue, marca ✅ TestNG
+## 🧪 ¿Para qué sirve TestNG?
 
-    Luego:
-    Next > Next > Accept License > Finish
+- 📌 Organizar y correr pruebas fácilmente
+- 🧪 Ejecutar pruebas con prioridades y dependencias
+- 🧼 Limpiar/Preparar datos con `@Before` y `@After`
+- 📝 Generar reportes HTML/XML
+- 🔁 Ejecutar en paralelo
+- 🧩 Integración con Maven, Jenkins, Selenium...
 
-    Reinicia Eclipse cuando se te indique
+---
 
-🧪 ¿Para qué sirve TestNG?
+## ▶️ Cómo ejecutar un caso de prueba con TestNG
 
-    📌 Organizar y correr pruebas fácilmente
+1. Asegúrate de que el proyecto ya esté abierto en Eclipse
+2. Abre la carpeta del proyecto en el panel izquierdo
+3. Navega a:  
+   `src > test > java > <paquete_del_test>`
+4. Da doble clic sobre el archivo del test que quieres ejecutar (por ejemplo: `LoginTest.java`)
+5. Haz clic derecho en el archivo abierto o directamente desde el explorador del proyecto
+6. Selecciona:  
+   👉 `Run As > TestNG Test`
+7. Observa los resultados en la pestaña **Console** y en **Results of running suite**
 
-    🧪 Ejecutar pruebas con prioridades y dependencias
+---
 
-    🧼 Limpiar/Preparar datos con @Before y @After
-
-    📝 Generar reportes HTML/XML
-
-    🔁 Ejecutar en paralelo
-
-    🧩 Integración con Maven, Jenkins, Selenium...
-
-###▶️ Cómo ejecutar un caso de prueba con TestNG
-
-    Asegúrate de que el proyecto ya esté abierto en Eclipse
-
-    Abre la carpeta del proyecto en el panel izquierdo
-
-    Navega a:
-    src > test > java > <paquete_del_test>
-
-    Da doble clic sobre el archivo del test que quieres ejecutar (por ejemplo: LoginTest.java)
-
-    Haz clic derecho en el archivo abierto o directamente desde el explorador del proyecto
-
-    Selecciona:
-    👉 Run As > TestNG Test
-
-    Observa los resultados en la pestaña Console y en Results of running suite
+¿Listo para probar Todoist como un pro? 😎  
+Si algo no funciona, respira, vuelve a leer con calma y ¡dale otra oportunidad!
