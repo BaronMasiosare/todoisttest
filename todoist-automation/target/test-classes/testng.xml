@@ -4,15 +4,17 @@
     <listener class-name="com.ejemplo.todoist.utils.TestListener" />
   </listeners>
 
-  <test name="Login Test">
+  <test name="Flujo Login y Crear Tarea" preserve-order="true">
     <classes>
       <class name="com.ejemplo.todoist.tests.LoginTest"/>
+      <class name="com.ejemplo.todoist.tests.CreateTaskTest"/>
     </classes>
   </test>
-  
-  <test name="Login Fail">
+
+  <test name="Login Fallido" preserve-order="true">
     <classes>
-        <class name="com.ejemplo.todoist.tests.LoginFail"/>
+      <class name="com.ejemplo.todoist.tests.LoginFail"/>
     </classes>
-</test>
+  </test>
 </suite>
+

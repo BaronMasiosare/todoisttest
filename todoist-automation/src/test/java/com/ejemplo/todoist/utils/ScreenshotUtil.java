@@ -1,28 +1,24 @@
 package com.ejemplo.todoist.utils;
 
-import org.openqa.selenium.*;
-import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 public class ScreenshotUtil {
+    public static void tomarCaptura(WebDriver driver, String nombre) {
+        File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File dest = new File("screenshots/" + nombre + ".jpg");
 
-    public static void tomarCaptura(WebDriver driver, String nombreBase) {
-        TakesScreenshot ts = (TakesScreenshot) driver;
-        File fuente = ts.getScreenshotAs(OutputType.FILE);
-
-        String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String nombreArchivo = "evidencias/" + nombreBase + "_" + timestamp + ".png";
-
+        dest.getParentFile().mkdirs();
         try {
-            File destino = new File(nombreArchivo);
-            FileUtils.copyFile(fuente, destino);
-            System.out.println("Captura guardada: " + nombreArchivo);
+            Files.copy(src.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException e) {
-            System.out.println("Error al guardar captura: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 }
