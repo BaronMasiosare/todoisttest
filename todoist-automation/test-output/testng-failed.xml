@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.ejemplo.todoist.tests.LoginTest">
+      <class name="com.ejemplo.todoist.tests.LoginFail">
         <methods>
-          <include name="tearDown"/>
+          <include name="loginFallidoTodoist"/>
           <include name="setUp"/>
-          <include name="loginTodoist"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.ejemplo.todoist.tests.LoginTest -->
+      </class> <!-- com.ejemplo.todoist.tests.LoginFail -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

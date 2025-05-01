@@ -23,7 +23,7 @@ public class LoginFail implements WebDriverProvider {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
-    @Test
+    @Test(priority = 2)
     public void loginFallidoTodoist() {
         driver.get("https://www.todoist.com/es");
         ScreenshotUtil.tomarCaptura(driver, "01_inicio");
