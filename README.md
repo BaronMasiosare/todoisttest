@@ -1,6 +1,10 @@
 
 # 🛠️ Preparando tu entorno para correr las pruebas Todoist 🧪
 
+A continuacion tendras explicacion de ejecutar pruebas automatizadas usando Eclipse IDE y como hacer pruebas de API de la misma web. 
+
+Tendremos unos documentos con Casos de Prueba, Levantamiento de defectos y un plan de pruebas.
+
 ## ✅ ¿Qué necesitas tener en tu laptop?
 
 ### 1. 📥 Instala Git  
@@ -102,3 +106,89 @@ git clone https://github.com/BaronMasiosare/todoisttest.git
 
 ¿Listo para probar Todoist como un pro? 😎  
 Si algo no funciona, respira, vuelve a leer con calma y ¡dale otra oportunidad!
+
+ ----------------------------------------------------------
+
+# 🚀 Configuración y uso de tu colección Postman para la API
+
+## 📥 Importa tu colección en Postman
+
+1. **Descarga Postman** (si aún no lo tienes):
+   👉 [https://www.postman.com/downloads/](https://www.postman.com/downloads/)
+
+2. **Abre Postman** y haz clic en **"Import"** dentro de Collections (botón en la esquina superior izquierda)
+
+3. **Selecciona tu archivo** de colección:
+   - Puede ser un archivo JSON que te hayan compartido
+
+4. **¡Listo!** Tu colección aparecerá en el panel izquierdo bajo **"Collections"**
+
+---
+
+## ⚙️ Configura variables de entorno (si las necesitas)
+### 🔧 Si tu API requiere autenticación o URLs base:
+
+1. **Abre Postman** y haz clic en **"Enviroments"** que esta abajo de Collections y haz clic en **"Import"** (botón en la esquina superior izquierda)
+
+2. Selecciona **"Add Environment"**
+
+3. **Listo** el ambiente listo para usarse
+
+### 🔧 Para generar el Bearer Token:
+
+1. Ve a la Web de Todoist y genera tu usuario.
+
+2. Una ves generado y dentro de la app, da click en Settings (dando clicl en el usuario, del lado superior izquierdo)
+
+3. Ve a **Integrations** y da click en **Developer**, ahi veras el API Token.
+
+4. Regresa a Postman y da click en la coleccion, selecciona **Auth** 
+
+5. En el dropdow Auth Type selecciona **Bearer Token** y en el campo de Token pega el API token y **Listo**.
+---
+
+## 🧪 Ejecuta tus requests de la colección
+
+### 🔸 Ejecutar un request individual:
+1. Haz clic en tu colección para expandirla
+2. Selecciona el request que quieres probar
+3. Revisa que los parámetros estén correctos
+4. Haz clic en **"Send"**
+5. ¡Observa la respuesta en la parte inferior!
+
+### 🔸 Ejecutar toda la colección (Runner):
+1. Haz clic en **"Runner"** (ícono de correr en la esquina inferior izquierda)
+2. Arrastra tu colección al espacio de trabajo
+3. Configura:
+   - **Environment**: Selecciona tu entorno configurado
+   - **Iterations**: Cuántas veces ejecutar cada request
+4. Haz clic en **"Run [Nombre de tu colección]"**
+
+---
+
+## 📊 Analiza los resultados
+
+### ✅ En la ejecución individual:
+- **Status Code**: 200 = ✅ éxito, 4xx/5xx = ❌ error
+- **Response Body**: Los datos que te devuelve la API
+- **Time**: Cuánto tardó en responder
+
+### 📈 En el Runner:
+- **Verde** = Pasó
+- **Rojo** = Falló
+- **Tiempos** de ejecución de cada request
+
+---
+
+## 💡 Tips pro para trabajar con APIs
+
+### 🛠️ Si algo falla:
+1. **Revisa la autenticación** (Headers > Authorization)
+2. **Verifica la URL** completa
+3. **Confirma el body** (si es POST/PUT)
+4. **Revisa los parámetros** en Params/Query Params
+
+---
+
+¿Listo para dominar esa API como un ninja? 🥷  
+Si algún request no funciona, ¡respira hondo y revisa paso a paso! La magia está en los detalles ✨

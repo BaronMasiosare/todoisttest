@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "4dfd852f-51e4-4e3c-8a6c-f945f0c82eb9",
+		"name": "API Todoist",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25427205"
+	},
+	"item": [
+		{
+			"name": "Add Project",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "db5e3ad6981465e47b970d3776ac153b4369d248",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Zuleyma\" /*add Name of New Project*/\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}projects",
+					"host": [
+						"{{Host}}projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "db5e3ad6981465e47b970d3776ac153b4369d248",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Host}}tasks",
+					"host": [
+						"{{Host}}tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Active Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "db5e3ad6981465e47b970d3776ac153b4369d248",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Host}}tasks/{{ID Task}}",
+					"host": [
+						"{{Host}}tasks"
+					],
+					"path": [
+						"{{ID Task}}"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "db5e3ad6981465e47b970d3776ac153b4369d248",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"project_id\": \"2306410972\",/*It can be found in the Get All Task request*/\r\n    \"content\": \"zuleyma\",\r\n    \"description\": \"bonis\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}tasks",
+					"host": [
+						"{{Host}}tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "db5e3ad6981465e47b970d3776ac153b4369d248",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"zuleymaBonis\",\r\n    \"description\": \"Extrabonis\"\r\n}\r\n\r\n/*ID Task is on JÜSTO Challenge ENV, change with ID of the selected task*/",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}tasks/{{ID Task}}",
+					"host": [
+						"{{Host}}tasks"
+					],
+					"path": [
+						"{{ID Task}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "db5e3ad6981465e47b970d3776ac153b4369d248",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Host}}tasks/{{ID Task}}",
+					"host": [
+						"{{Host}}tasks"
+					],
+					"path": [
+						"{{ID Task}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "db5e3ad6981465e47b970d3776ac153b4369d248",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
